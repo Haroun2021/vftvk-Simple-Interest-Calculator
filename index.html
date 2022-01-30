@@ -1,16 +1,30 @@
+<!-- 1) adding Doctype -->
+<!DOCTYPE html>
 <html>
     <head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <!--2) add title --> 
+    <title>Simple interest calculator</title>
     </head>
-    <body>
+    <body onload="finishPage()">
+    	<!--3)move all the content which currently is in the <body> to a <div> tag -->    	
+ <!--4)set the class attribute of this div to "maindiv" -->  
+        <div class="maindiv">
         <h1>Simple Interest Calculator</h1>
 
         Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+        <!--steps 5 & 6 &7 &8 -->  
+        Interest Rate <input type="range" min="1" max="20" step="0.25" value="10.25" id="rate" onchange=refreshSlider()>  <span id="rateLabel">10.25%</span><br/>
+        <!--step 9 --> 
+        No. of Years <select id="years"></select> <br/>
+        <span id="result"></span><br>
+<!--step 10) change the name of 'compute'button to "compute interest" -->
+        <button onclick="compute()">Compute Interest</button>
+        <!--step 11 : Below the "Compute Interest" button create an empty <span> and set its id to 'result'.-->
+        <span id="results"></span><br><br>
+        <!--step 12 : footer tag -->  
+        <footer> &#169; This calculator belongs to TRAY HAROUN</footer>
+        </div>
     </body>
 </html>
